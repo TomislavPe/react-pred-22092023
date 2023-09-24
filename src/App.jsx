@@ -1,6 +1,6 @@
 import "./App.css";
 import { useState } from "react";
-import { UserFunction ,AddNewUser} from "./user";
+import { UserFunction, AddNewUser } from "./user";
 
 function App() {
     const initialUsers = [
@@ -26,14 +26,14 @@ function App() {
         setUsers(newUsers);
     };
 
-    const addUser = (event, name, years = 30) => {
+    const addUser = (event, name, years) => {
         event.preventDefault();
         const newUser = {
             id: `${name}_${new Date().getTime()}`,
             name,
-            years
-        }
-        setUsers([...users, newUser])
+            years,
+        };
+        setUsers([...users, newUser]);
     };
 
     return (
@@ -48,7 +48,7 @@ function App() {
                 />
             ))}
 
-            <AddNewUser addUser={addUser}/>
+            <AddNewUser addUser={addUser} />
 
             {/*<div>
         <button onClick={uvecajGodine}>Uvecaj godine</button>

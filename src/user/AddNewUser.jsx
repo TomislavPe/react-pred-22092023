@@ -6,31 +6,38 @@ const AddNewUser = ({ addUser }) => {
     return (
         <form
             onSubmit={(event) => {
-                setName("")
-                setAge(30)
                 addUser(event, name, age);
+                setName("");
+                setAge(30);
             }}
         >
-            <label htmlFor="nameInput">
-                Unesi ime:
-                <input
-                    type="text"
-                    id="nameInput"
-                    value={name}
-                    onChange={(event) => {
-                        setName(event.target.value);
-                    }}
-                />
-                Unesi godine:
-                <input
-                    type="text"
-                    id="ageInput"
-                    value={age}
-                    onChange={(event) => {
-                        setAge(event.target.value);
-                    }}
-                />
-            </label>
+            <div>
+                <label htmlFor="nameInput">
+                    Unesi ime:
+                    <input
+                        type="text"
+                        id="nameInput"
+                        value={name}
+                        onChange={(event) => {
+                            setName(event.target.value);
+                        }}
+                    />
+                </label>
+            </div>
+            <div>
+                <label htmlFor="ageInput">
+                    Unesi godine:
+                    <input
+                        type="text"
+                        id="ageInput"
+                        value={age}
+                        onChange={(event) => {
+                            setAge(event.target.value);
+                        }}
+                    />
+                </label>
+            </div>
+            <button type="submit">Potvrdi</button>
         </form>
     );
 };
